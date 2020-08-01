@@ -7,6 +7,6 @@
     "validation_method": "",
     "default_value": "",
     "relations": {
-        "tlTeleErrorLog": 20
+        "tlTelegramBot": 20
     }
 }

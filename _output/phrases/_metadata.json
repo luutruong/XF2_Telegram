@@ -1,47 +1,47 @@
 {
-    "option.tel_botToken.txt": {
+    "option.telegramBot_botToken.txt": {
         "global_cache": false,
         "version_id": 1000000,
         "version_string": "1.0.0",
         "hash": "12c387ffe038220e9794f9aa021e63ba"
     },
-    "option.tel_chatId.txt": {
+    "option.telegramBot_chatId.txt": {
         "global_cache": false,
         "version_id": 1000000,
         "version_string": "1.0.0",
         "hash": "3308687b59d3bdb2b1064baedb9a0ebf"
     },
-    "option.tel_takeover.txt": {
+    "option.telegramBot_takeover.txt": {
         "global_cache": false,
         "version_id": 1000000,
         "version_string": "1.0.0",
         "hash": "9689a0da45c99e9b5c0cebe8a5f6e0f4"
     },
-    "option_explain.tel_botToken.txt": {
+    "option_explain.telegramBot_botToken.txt": {
         "global_cache": false,
         "version_id": 1000000,
         "version_string": "1.0.0",
         "hash": "316c1d6c600665a7742356d01c30446f"
     },
-    "option_explain.tel_chatId.txt": {
+    "option_explain.telegramBot_chatId.txt": {
         "global_cache": false,
         "version_id": 1000000,
         "version_string": "1.0.0",
         "hash": "dcee6bb0248babf4c107429bdb8acabb"
     },
-    "option_explain.tel_takeover.txt": {
+    "option_explain.telegramBot_takeover.txt": {
         "global_cache": false,
         "version_id": 1000000,
         "version_string": "1.0.0",
         "hash": "d0ed618c2fd2e2a851cde5e812cf5fcf"
     },
-    "option_group.tlTeleErrorLog.txt": {
+    "option_group.tlTelegramBot.txt": {
         "global_cache": false,
         "version_id": 1000000,
         "version_string": "1.0.0",
-        "hash": "39bd7974375c50183c0536db3aeb45e6"
+        "hash": "99b9056384cee39ba8235b9d67b14d6e"
     },
-    "option_group_description.tlTeleErrorLog.txt": {
+    "option_group_description.tlTelegramBot.txt": {
         "global_cache": false,
         "version_id": 1000000,
         "version_string": "1.0.0",

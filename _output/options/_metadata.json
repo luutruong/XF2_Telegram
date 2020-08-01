@@ -1,11 +1,11 @@
 {
-    "tel_botToken.json": {
-        "hash": "d201edd56079a94c88189307e26be389"
+    "telegramBot_botToken.json": {
+        "hash": "e93a1980fa1b3a8c237ea3dffc11c189"
     },
-    "tel_chatId.json": {
-        "hash": "e44caad86fde17b1c4a8c13229d16794"
+    "telegramBot_chatId.json": {
+        "hash": "fba8c6f31095bbf6dd4b0671ff6443cd"
     },
-    "tel_takeover.json": {
-        "hash": "6d256a626ecc11206855fd3ea1fd8757"
+    "telegramBot_takeover.json": {
+        "hash": "12ed7f0461c26494688b87500af5ea44"
     }
 }

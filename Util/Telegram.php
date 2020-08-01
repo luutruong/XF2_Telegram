@@ -14,8 +14,8 @@ class Telegram
     {
         $client = \XF::app()->http()->client();
 
-        $token = \XF::app()->options()->tel_botToken;
-        $chatId = \XF::app()->options()->tel_chatId;
+        $token = \XF::app()->options()->telegramBot_botToken;
+        $chatId = \XF::app()->options()->telegramBot_chatId;
 
         if (\strlen($token) === 0 || \strlen($chatId) === 0) {
             return false;

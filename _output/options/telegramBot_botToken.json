@@ -1,12 +1,12 @@
 {
-    "edit_format": "onoff",
+    "edit_format": "textbox",
     "edit_format_params": "",
-    "data_type": "unsigned_integer",
+    "data_type": "string",
     "sub_options": [],
     "validation_class": "",
     "validation_method": "",
-    "default_value": "0",
+    "default_value": "",
     "relations": {
-        "tlTeleErrorLog": 30
+        "tlTelegramBot": 10
     }
 }

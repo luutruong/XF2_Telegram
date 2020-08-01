@@ -31,7 +31,7 @@ class Error extends \XF\Error
     {
         if ($this->telEnableLogs) {
             $hasRollback = (bool) $rollback;
-            if (\XF::app()->options()->tel_takeover == 1
+            if (\XF::app()->options()->telegramBot_takeover == 1
                 && !$hasRollback
             ) {
                 return $this->telLogException($e, $messagePrefix);
