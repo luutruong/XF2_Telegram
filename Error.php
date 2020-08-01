@@ -1,8 +1,8 @@
 <?php
 
-namespace Truonglv\TeleErrorLog;
+namespace Truonglv\TelegramBot;
 
-use Truonglv\TeleErrorLog\Util\Telegram;
+use Truonglv\TelegramBot\Util\Telegram;
 
 class Error extends \XF\Error
 {

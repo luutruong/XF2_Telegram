@@ -1,8 +1,8 @@
 <?php
 
-namespace Truonglv\TeleErrorLog\Util;
+namespace Truonglv\TelegramBot\Util;
 
-use Truonglv\TeleErrorLog\Error;
+use Truonglv\TelegramBot\Error;
 
 class Telegram
 {
