@@ -1,14 +1,16 @@
 {
     "legacy_addon_id": "",
     "title": "[tl] Telegram Bot",
-    "description": "",
+    "description": "Integrate Telegram with XenForo",
     "version_id": 1000000,
     "version_string": "1.0.0",
-    "dev": "",
+    "dev": "Truonglv",
     "dev_url": "",
     "faq_url": "",
-    "support_url": "",
-    "extra_urls": [],
+    "support_url": "https://github.com/luutruong/XF2_TelegramBot/issues",
+    "extra_urls": {
+        "Repo": "https://github.com/luutruong/XF2_TelegramBot"
+    },
     "require": [],
     "icon": ""
 }
