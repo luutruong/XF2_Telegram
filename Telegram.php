@@ -11,6 +11,10 @@ class Telegram
      */
     protected $token;
 
+    /**
+     * Telegram constructor.
+     * @param string $token
+     */
     public function __construct($token)
     {
         $this->token = $token;
