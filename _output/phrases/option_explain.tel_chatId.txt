@@ -1,0 +1,4 @@
+To get the chat ID please go this link: <b>https://api.telegram.org/bot<i>YOUR_BOT_TOKEN_HERE</i>/getUpdates</b>
+<br>
+<br>
+It's output as JSON so if you have trouble to read the contents just try to some online tools to help it.

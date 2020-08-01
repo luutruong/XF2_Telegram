@@ -1,0 +1,1 @@
+If checked, it's does not log any errors to <b>Server error log</b> page. In case failed to communicate with Telegram it's will fallback to XenForo handler.

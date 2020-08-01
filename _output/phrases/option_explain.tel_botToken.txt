@@ -1,0 +1,4 @@
+In the Telegram chat,  message <b>@BotFather</b> with the following text: <b>/newbot</b>
+<br/>
+<br/>
+If you don't know how to message by username, click the search field on your Telegram app and type <b>@BotFather</b>, where you should be able to initiate a conversation. Be careful not to send it to the wrong contact, because some users have similar usernames to <b>BotFather</b>
