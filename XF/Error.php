@@ -1,8 +1,9 @@
 <?php
 
-namespace Truonglv\TelegramBot;
+namespace Truonglv\TelegramBot\XF;
 
-use Truonglv\TelegramBot\Util\Telegram;
+use Truonglv\TelegramBot\App;
+use Truonglv\TelegramBot\Telegram;
 
 class Error extends \XF\Error
 {
@@ -29,14 +30,15 @@ class Error extends \XF\Error
      */
     public function logException($e, $rollback = false, $messagePrefix = '', $forceLog = false)
     {
-        if ($this->telEnableLogs) {
+        $api = App::getTelegramApi();
+        if ($this->telEnableLogs && $api !== null) {
             $hasRollback = (bool) $rollback;
             if (\XF::app()->options()->telegramBot_takeover == 1
                 && !$hasRollback
             ) {
-                return $this->telLogException($e, $messagePrefix);
+                return $this->telLogException($api, $e, $messagePrefix);
             } else {
-                $this->telLogException($e, $messagePrefix);
+                $this->telLogException($api, $e, $messagePrefix);
             }
         }
 
@@ -44,11 +46,12 @@ class Error extends \XF\Error
     }
 
     /**
+     * @param Telegram $api
      * @param mixed $e
      * @param string $messagePrefix
      * @return bool
      */
-    protected function telLogException($e, $messagePrefix)
+    protected function telLogException(Telegram $api, $e, $messagePrefix)
     {
         $isValidArg = ($e instanceof \Exception || $e instanceof \Throwable);
         if (!$isValidArg) {
@@ -93,6 +96,6 @@ Request state
 </pre>
 EOT;
 
-        return Telegram::sendMessage($message);
+        return $api->sendMessage($message);
     }
 }

@@ -13,7 +13,18 @@ class Listener
         $container = $app->container();
 
         $container['error'] = function () use ($app) {
-            return new Error($app);
+            return new XF\Error($app);
+        };
+
+        $container['telegramBot'] = function () {
+            $token = \XF::app()->options()->telegramBot_botToken;
+            if (\strlen($token) === 0) {
+                return null;
+            }
+
+            $class = \XF::extendClass('Truonglv\\TelegramBot\\Telegram');
+
+            return new $class($token);
         };
     }
 }
