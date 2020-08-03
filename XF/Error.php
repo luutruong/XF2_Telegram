@@ -61,7 +61,6 @@ class Error extends \XF\Error
         $rootDir = \XF::getRootDirectory() . \XF::$DS;
         $file = \str_replace($rootDir, '', $e->getFile());
 
-        $requestInfo = \XF::dumpSimple($this->getRequestDataForExceptionLog(), true);
         if (\strlen($messagePrefix) > 0) {
             $messagePrefix = \trim($messagePrefix) . ' ';
         }
@@ -82,18 +81,8 @@ class Error extends \XF\Error
         $message = <<<EOT
 {$title}
 {$fileName}:{$line}
-
-Stack trace
-<pre>
-    <code class="language-php">
-        {$trace}
-    </code>
-</pre>
-
-Request state
-<pre>
-    {$requestInfo}
-</pre>
+----------------------------
+{$trace}
 EOT;
 
         return $api->sendMessage($message);
