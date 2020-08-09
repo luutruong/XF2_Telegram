@@ -13,6 +13,7 @@ class Login extends XFCP_Login
             $messages = [];
 
             $messages[] = 'New login to ACP!';
+            $messages[] = 'Account: ' . $this->filter('login', 'str');
             $messages[] = 'IP: ' . $this->request()->getIp();
             $messages[] = 'Browser: ' . $this->request()->getUserAgent();
 
