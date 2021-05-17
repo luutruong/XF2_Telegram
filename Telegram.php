@@ -37,6 +37,28 @@ class Telegram
             $params['chat_id'] = $chatId;
         }
 
+        if (isset($params['parse_mode']) && $params['parse_mode'] === 'MarkdownV2') {
+            $params['text'] = \strtr($params['text'], [
+                '_' => '\\_',
+                '*' => '\\*',
+                '[' => '\\[',
+                ']' => '\\]',
+                '(' => '\\(',
+                ')' => '\\)',
+                '~' => '\\~',
+                '`' => '\\`',
+                '>' => '\\>',
+                '#' => '\\#',
+                '+' => '\\+',
+                '-' => '\\-',
+                '=' => '\\=',
+                '|' => '\\|',
+                '{' => '\\{',
+                '}' => '\\}',
+                '.' => '\\.',
+                '!' => '\\!'
+            ]);
+        }
         $params['text'] = \utf8_substr($message, 0, 4096);
 
         return $this->sendRequest('POST', 'sendMessage', [
