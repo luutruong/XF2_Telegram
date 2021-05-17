@@ -1,11 +1,11 @@
 {
     "telegramBot_botToken.json": {
-        "hash": "e93a1980fa1b3a8c237ea3dffc11c189"
+        "hash": "1b7da6dff2aa91820c901f074eff9b3e"
     },
     "telegramBot_chatId.json": {
-        "hash": "fba8c6f31095bbf6dd4b0671ff6443cd"
+        "hash": "63f382803f6451056cb94bfcb3565279"
     },
     "telegramBot_takeover.json": {
-        "hash": "12ed7f0461c26494688b87500af5ea44"
+        "hash": "a955a3f63ee6bcbf8137568aae94dc2c"
     }
 }

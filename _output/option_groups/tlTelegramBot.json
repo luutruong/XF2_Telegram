@@ -1,5 +1,6 @@
 {
     "icon": "",
     "display_order": 20200801,
+    "advanced": false,
     "debug_only": false
 }
