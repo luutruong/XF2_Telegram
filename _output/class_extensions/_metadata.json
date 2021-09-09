@@ -1,5 +1,8 @@
 {
     "XF-Admin-Controller-Login_Truonglv-TelegramBot-XF-Admin-Controller-Login.json": {
         "hash": "cefd9344e689c81bbca013e45c31b7b4"
+    },
+    "XF-Entity-PaymentProviderLog_Truonglv-TelegramBot-XF-Entity-PaymentProviderLog.json": {
+        "hash": "d5b310e6a118f7167ea956e6cb77c136"
     }
 }

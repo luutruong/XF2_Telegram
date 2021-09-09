@@ -4,10 +4,7 @@ namespace Truonglv\TelegramBot;
 
 class App
 {
-    /**
-     * @return Telegram|null
-     */
-    public static function getTelegramApi()
+    public static function getTelegramApi(): ?Telegram
     {
         /** @var Telegram|null $api */
         $api = \XF::app()->container('telegramBot');

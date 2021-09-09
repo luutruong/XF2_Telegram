@@ -11,12 +11,6 @@
         "version_string": "1.0.0",
         "hash": "3308687b59d3bdb2b1064baedb9a0ebf"
     },
-    "option.telegramBot_takeover.txt": {
-        "global_cache": false,
-        "version_id": 1000000,
-        "version_string": "1.0.0",
-        "hash": "9689a0da45c99e9b5c0cebe8a5f6e0f4"
-    },
     "option_explain.telegramBot_botToken.txt": {
         "global_cache": false,
         "version_id": 1000000,
@@ -28,12 +22,6 @@
         "version_id": 1000000,
         "version_string": "1.0.0",
         "hash": "dcee6bb0248babf4c107429bdb8acabb"
-    },
-    "option_explain.telegramBot_takeover.txt": {
-        "global_cache": false,
-        "version_id": 1000000,
-        "version_string": "1.0.0",
-        "hash": "d0ed618c2fd2e2a851cde5e812cf5fcf"
     },
     "option_group.tlTelegramBot.txt": {
         "global_cache": false,

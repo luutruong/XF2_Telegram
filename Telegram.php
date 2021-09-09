@@ -11,11 +11,7 @@ class Telegram
      */
     protected $token;
 
-    /**
-     * Telegram constructor.
-     * @param string $token
-     */
-    public function __construct($token)
+    public function __construct(string $token)
     {
         $this->token = $token;
     }
@@ -24,14 +20,14 @@ class Telegram
      * @param string $message
      * @param array $params
      * @link https://core.telegram.org/bots/api#sendmessage
-     * @return bool
+     * @return array|null
      */
-    public function sendMessage($message, array $params = [])
+    public function sendMessage(string $message, array $params = []): ?array
     {
         if (!isset($params['chat_id'])) {
             $chatId = \XF::app()->options()->telegramBot_chatId;
             if (\strlen($chatId) === 0) {
-                return false;
+                return null;
             }
 
             $params['chat_id'] = $chatId;
@@ -66,13 +62,7 @@ class Telegram
         ]);
     }
 
-    /**
-     * @param string $method
-     * @param string $endPoint
-     * @param array $options
-     * @return mixed|null
-     */
-    protected function sendRequest($method, $endPoint, array $options)
+    protected function sendRequest(string $method, string $endPoint, array $options): ?array
     {
         $client = \XF::app()->http()->client();
         $response = null;
@@ -80,6 +70,7 @@ class Telegram
         try {
             $response = $client->request($method, self::API_ENDPOINT . '/bot' . $this->token . '/' . $endPoint, $options);
         } catch (\GuzzleHttp\Exception\GuzzleException $e) {
+            \XF::logException($e, false, '[tl] Telegram Bot: ');
         }
 
         if ($response === null || $response->getStatusCode() !== 200) {
