@@ -2,8 +2,8 @@
 
 namespace Truonglv\TelegramBot\XF\Pub\Controller;
 
-use Truonglv\TelegramBot\App;
 use XF\Mvc\ParameterBag;
+use Truonglv\TelegramBot\App;
 
 class Misc extends XFCP_Misc
 {
@@ -32,7 +32,7 @@ class Misc extends XFCP_Misc
     }
 
     /**
-     * @param string $action
+     * @param mixed $action
      * @param ParameterBag $params
      * @return void
      */
