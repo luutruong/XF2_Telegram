@@ -25,3 +25,14 @@ Once you complete to create the bot you will get token and its required to use w
 - `/most_viewed_threads`: To get 10 top viewed threads sorted by views in 24 hours
 - `/most_replied_threads`:  To get 10 top replied threads sorted by reply count in 24 hours
 - `/recent_threads`: To get top 10 recent threads in 24 hours
+
+## Add new commands
+
+```php
+<?php
+
+use Truonglv\Telegram\App;
+
+$telegram = App::getTelegram();
+$telegram->addCommand('test', 'Some\Class\HandlerForCommand');
+```
