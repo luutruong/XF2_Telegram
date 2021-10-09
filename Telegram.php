@@ -1,6 +1,6 @@
 <?php
 
-namespace Truonglv\TelegramBot;
+namespace Truonglv\Telegram;
 
 class Telegram
 {

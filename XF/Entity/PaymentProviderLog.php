@@ -1,8 +1,8 @@
 <?php
 
-namespace Truonglv\TelegramBot\XF\Entity;
+namespace Truonglv\Telegram\XF\Entity;
 
-use Truonglv\TelegramBot\App;
+use Truonglv\Telegram\App;
 use XF\Entity\PurchaseRequest;
 
 class PaymentProviderLog extends XFCP_PaymentProviderLog

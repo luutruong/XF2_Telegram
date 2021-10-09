@@ -1,8 +1,8 @@
 <?php
 
-namespace Truonglv\TelegramBot\Command;
+namespace Truonglv\Telegram\Command;
 
-use Truonglv\TelegramBot\App;
+use Truonglv\Telegram\App;
 
 class Help extends AbstractHandler
 {

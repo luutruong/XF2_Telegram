@@ -1,9 +1,9 @@
 <?php
 
-namespace Truonglv\TelegramBot\XF\Pub\Controller;
+namespace Truonglv\Telegram\XF\Pub\Controller;
 
 use XF\Mvc\ParameterBag;
-use Truonglv\TelegramBot\App;
+use Truonglv\Telegram\App;
 
 class Misc extends XFCP_Misc
 {

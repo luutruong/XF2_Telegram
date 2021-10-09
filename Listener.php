@@ -1,8 +1,8 @@
 <?php
 
-namespace Truonglv\TelegramBot;
+namespace Truonglv\Telegram;
 
-use Truonglv\TelegramBot\Command\Help;
+use Truonglv\Telegram\Command\Help;
 
 class Listener
 {
@@ -19,7 +19,7 @@ class Listener
                 return null;
             }
 
-            $class = \XF::extendClass('Truonglv\\TelegramBot\\Telegram');
+            $class = \XF::extendClass('Truonglv\\Telegram\\Telegram');
 
             /** @var Telegram $api */
             $api = new $class($token);

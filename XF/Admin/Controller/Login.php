@@ -1,8 +1,8 @@
 <?php
 
-namespace Truonglv\TelegramBot\XF\Admin\Controller;
+namespace Truonglv\Telegram\XF\Admin\Controller;
 
-use Truonglv\TelegramBot\App;
+use Truonglv\Telegram\App;
 
 class Login extends XFCP_Login
 {

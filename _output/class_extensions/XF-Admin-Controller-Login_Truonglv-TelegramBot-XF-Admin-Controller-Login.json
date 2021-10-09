@@ -1,6 +1,6 @@
 {
     "from_class": "XF\\Admin\\Controller\\Login",
-    "to_class": "Truonglv\\TelegramBot\\XF\\Admin\\Controller\\Login",
+    "to_class": "Truonglv\\Telegram\\XF\\Admin\\Controller\\Login",
     "execute_order": 10,
     "active": true
 }

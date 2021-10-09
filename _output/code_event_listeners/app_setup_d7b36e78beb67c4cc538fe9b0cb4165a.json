@@ -1,7 +1,7 @@
 {
     "event_id": "app_setup",
     "execute_order": 10,
-    "callback_class": "Truonglv\\TelegramBot\\Listener",
+    "callback_class": "Truonglv\\Telegram\\Listener",
     "callback_method": "onAppSetup",
     "active": true,
     "hint": "",
