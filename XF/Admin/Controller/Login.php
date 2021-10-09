@@ -8,7 +8,7 @@ class Login extends XFCP_Login
 {
     public function actionLogin()
     {
-        $api = App::getTelegramApi();
+        $api = App::getTelegram();
         if ($api !== null && $this->options()->telegramBot_notifyAdminAccess > 0) {
             $messages = [];
 

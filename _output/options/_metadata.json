@@ -1,11 +1,11 @@
 {
-    "telegramBot_botToken.json": {
-        "hash": "1b7da6dff2aa91820c901f074eff9b3e"
+    "telegram_botToken.json": {
+        "hash": "c60dcebf4b3a5ee36764cb633add99ea"
     },
-    "telegramBot_chatId.json": {
-        "hash": "63f382803f6451056cb94bfcb3565279"
+    "telegram_chatId.json": {
+        "hash": "d3f9e44197b237ed903c36d6b067c73b"
     },
-    "telegramBot_notifyAdminAccess.json": {
-        "hash": "fd980aa0e40e985bd2ad4718b77768ec"
+    "telegram_notifyAdminAccess.json": {
+        "hash": "9f6ee5840e8959d75b542df76ea63f77"
     }
 }

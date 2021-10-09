@@ -1,16 +1,21 @@
 {
     "legacy_addon_id": "",
-    "title": "[tl] Telegram Bot",
-    "description": "Integrate Telegram with XenForo",
+    "title": "[tl] Telegram Integration",
+    "description": "",
     "version_id": 1000500,
     "version_string": "1.0.5",
     "dev": "Truonglv",
-    "dev_url": "",
+    "dev_url": "https://nobita.me",
     "faq_url": "",
-    "support_url": "https://github.com/luutruong/XF2_TelegramBot/issues",
+    "support_url": "https://github.com/luutruong/XF2_Telegram/issues",
     "extra_urls": {
-        "Repo": "https://github.com/luutruong/XF2_TelegramBot"
+        "Repo": "https://github.com/luutruong/XF2_Telegram"
     },
-    "require": [],
+    "require": {
+        "php": [
+            "7.4.0",
+            "PHP 7.4.0 or higher"
+        ]
+    },
     "icon": ""
 }

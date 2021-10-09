@@ -9,7 +9,7 @@ class Misc extends XFCP_Misc
 {
     public function actionTelegramWebhook()
     {
-        $telegramApi = App::getTelegramApi();
+        $telegramApi = App::getTelegram();
         if ($telegramApi === null) {
             die('Telegram was not setup');
         }

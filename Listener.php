@@ -13,7 +13,7 @@ class Listener
     public static function onAppSetup(\XF\App $app)
     {
         $container = $app->container();
-        $container['telegramBot'] = function () {
+        $container[App::KEY_CONTAINER_TELEGRAM] = function () {
             $token = \XF::app()->options()->telegramBot_botToken;
             if (\strlen($token) === 0) {
                 return null;

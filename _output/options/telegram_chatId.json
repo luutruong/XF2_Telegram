@@ -8,6 +8,6 @@
     "advanced": false,
     "default_value": "",
     "relations": {
-        "tlTelegramBot": 20
+        "tlTelegram": 20
     }
 }

@@ -11,7 +11,7 @@ class PaymentProviderLog extends XFCP_PaymentProviderLog
     {
         parent::_postSave();
 
-        $telegram = App::getTelegramApi();
+        $telegram = App::getTelegram();
         if ($this->isChanged('log_type')
             && $this->log_type === 'payment'
             && $telegram !== null

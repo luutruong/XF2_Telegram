@@ -1,50 +1,50 @@
 {
-    "option.telegramBot_botToken.txt": {
+    "option.telegram_botToken.txt": {
         "global_cache": false,
-        "version_id": 1000000,
-        "version_string": "1.0.0",
+        "version_id": 1000500,
+        "version_string": "1.0.5",
         "hash": "12c387ffe038220e9794f9aa021e63ba"
     },
-    "option.telegramBot_chatId.txt": {
+    "option.telegram_chatId.txt": {
         "global_cache": false,
-        "version_id": 1000000,
-        "version_string": "1.0.0",
+        "version_id": 1000500,
+        "version_string": "1.0.5",
         "hash": "3308687b59d3bdb2b1064baedb9a0ebf"
     },
-    "option.telegramBot_notifyAdminAccess.txt": {
+    "option.telegram_notifyAdminAccess.txt": {
         "global_cache": false,
-        "version_id": 1000400,
-        "version_string": "1.0.4",
+        "version_id": 1000500,
+        "version_string": "1.0.5",
         "hash": "12f7fcaa5df75fb4b397ed96ddc12bfc"
     },
-    "option_explain.telegramBot_botToken.txt": {
+    "option_explain.telegram_botToken.txt": {
         "global_cache": false,
-        "version_id": 1000400,
-        "version_string": "1.0.4",
+        "version_id": 1000500,
+        "version_string": "1.0.5",
         "hash": "29f59ade2abd79e99fc94b0e6ca70df1"
     },
-    "option_explain.telegramBot_chatId.txt": {
+    "option_explain.telegram_chatId.txt": {
         "global_cache": false,
-        "version_id": 1000000,
-        "version_string": "1.0.0",
+        "version_id": 1000500,
+        "version_string": "1.0.5",
         "hash": "dcee6bb0248babf4c107429bdb8acabb"
     },
-    "option_explain.telegramBot_notifyAdminAccess.txt": {
+    "option_explain.telegram_notifyAdminAccess.txt": {
         "global_cache": false,
-        "version_id": 1000400,
-        "version_string": "1.0.4",
+        "version_id": 1000500,
+        "version_string": "1.0.5",
         "hash": "d41d8cd98f00b204e9800998ecf8427e"
     },
-    "option_group.tlTelegramBot.txt": {
+    "option_group.tlTelegram.txt": {
         "global_cache": false,
-        "version_id": 1000000,
-        "version_string": "1.0.0",
-        "hash": "99b9056384cee39ba8235b9d67b14d6e"
+        "version_id": 1000500,
+        "version_string": "1.0.5",
+        "hash": "60f32759f8b5479d341cb89577f24b70"
     },
-    "option_group_description.tlTelegramBot.txt": {
+    "option_group_description.tlTelegram.txt": {
         "global_cache": false,
-        "version_id": 1000000,
-        "version_string": "1.0.0",
+        "version_id": 1000500,
+        "version_string": "1.0.5",
         "hash": "d41d8cd98f00b204e9800998ecf8427e"
     }
 }

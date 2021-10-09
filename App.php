@@ -6,17 +6,19 @@ use Truonglv\TelegramBot\Command\AbstractHandler;
 
 class App
 {
-    public static function getTelegramApi(): ?Telegram
+    const KEY_CONTAINER_TELEGRAM = 'telegram';
+
+    public static function getTelegram(): ?Telegram
     {
         /** @var Telegram|null $api */
-        $api = \XF::app()->container('telegramBot');
+        $api = \XF::app()->container(self::KEY_CONTAINER_TELEGRAM);
 
         return $api;
     }
 
     public static function command(string $class): AbstractHandler
     {
-        $telegram = static::getTelegramApi();
+        $telegram = static::getTelegram();
         if ($telegram === null) {
             throw new \InvalidArgumentException('Telegram was not setup');
         }
