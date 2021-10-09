@@ -12,3 +12,8 @@ namespace Truonglv\TelegramBot\XF\Entity
 {
 	class XFCP_PaymentProviderLog extends \XF\Entity\PaymentProviderLog {}
 }
+
+namespace Truonglv\TelegramBot\XF\Pub\Controller
+{
+	class XFCP_Misc extends \XF\Pub\Controller\Misc {}
+}

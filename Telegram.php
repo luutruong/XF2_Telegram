@@ -6,14 +6,85 @@ class Telegram
 {
     const API_ENDPOINT = 'https://api.telegram.org';
 
-    /**
-     * @var string
-     */
-    protected $token;
+    protected string $token;
+
+    protected array $commands = [];
 
     public function __construct(string $token)
     {
         $this->token = $token;
+    }
+
+    public function getCommands(): array
+    {
+        return $this->commands;
+    }
+
+    public function addCommand(string $name, string $handlerClass): self
+    {
+        if (!class_exists($handlerClass)) {
+            throw new \InvalidArgumentException("Handler class '$handlerClass' not exists");
+        }
+
+        $this->commands[strtolower($name)] = $handlerClass;
+
+        return $this;
+    }
+
+    public function setWebhook(string $url): bool
+    {
+        $result = $this->sendRequest('POST', 'setWebhook', [
+            'form_params' => [
+                'url' => $url,
+            ],
+        ]);
+
+        return isset($result['ok']) && $result['ok'] === true;
+    }
+
+    public function deleteWebhook(): bool
+    {
+        $info = $this->sendRequest('POST', 'deleteWebhook', []);
+
+        return isset($info['ok']) && $info['ok'] === true;
+    }
+
+    public function handleWebhookEvent(string $inputRaw): void
+    {
+        $json = json_decode($inputRaw, true);
+        if (!is_array($json) || !isset($json['message'])) {
+            throw new \InvalidArgumentException('Invalid payload');
+        }
+
+        $sentFrom = $json['message']['from'] ?? null;
+        if ($sentFrom === null) {
+            throw new \InvalidArgumentException('Invalid payload');
+        }
+
+        $isBot = $sentFrom['is_bot'] ?? null;
+        if ($isBot !== false) {
+            throw new \InvalidArgumentException('Unknown message type');
+        }
+
+        $text = $json['message']['text'] ?? '';
+        if (strlen($text) === 0) {
+            throw new \InvalidArgumentException('Message is empty');
+        }
+
+        if (substr($text, 0, 1) !== '/') {
+            // not a valid command
+            return;
+        }
+
+        $command = ltrim($text, '/');
+        $handler = $this->commands[$command] ?? null;
+
+        if ($handler === null) {
+            return;
+        }
+
+        $handler = App::command($handler);
+        $handler->handle();
     }
 
     /**
@@ -69,7 +140,7 @@ class Telegram
 
         try {
             $response = $client->request($method, self::API_ENDPOINT . '/bot' . $this->token . '/' . $endPoint, $options);
-        } catch (\GuzzleHttp\Exception\GuzzleException $e) {
+        } catch (\Throwable $e) {
             \XF::logException($e, false, '[tl] Telegram Bot: ');
         }
 

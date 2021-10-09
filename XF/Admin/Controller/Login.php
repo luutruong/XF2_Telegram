@@ -9,7 +9,7 @@ class Login extends XFCP_Login
     public function actionLogin()
     {
         $api = App::getTelegramApi();
-        if ($api !== null) {
+        if ($api !== null && $this->options()->telegramBot_notifyAdminAccess > 0) {
             $messages = [];
 
             $messages[] = 'New login to ACP!';

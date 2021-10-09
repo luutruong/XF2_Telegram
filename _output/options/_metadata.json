@@ -4,5 +4,8 @@
     },
     "telegramBot_chatId.json": {
         "hash": "63f382803f6451056cb94bfcb3565279"
+    },
+    "telegramBot_notifyAdminAccess.json": {
+        "hash": "fd980aa0e40e985bd2ad4718b77768ec"
     }
 }

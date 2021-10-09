@@ -11,17 +11,29 @@
         "version_string": "1.0.0",
         "hash": "3308687b59d3bdb2b1064baedb9a0ebf"
     },
+    "option.telegramBot_notifyAdminAccess.txt": {
+        "global_cache": false,
+        "version_id": 1000400,
+        "version_string": "1.0.4",
+        "hash": "12f7fcaa5df75fb4b397ed96ddc12bfc"
+    },
     "option_explain.telegramBot_botToken.txt": {
         "global_cache": false,
-        "version_id": 1000000,
-        "version_string": "1.0.0",
-        "hash": "316c1d6c600665a7742356d01c30446f"
+        "version_id": 1000400,
+        "version_string": "1.0.4",
+        "hash": "29f59ade2abd79e99fc94b0e6ca70df1"
     },
     "option_explain.telegramBot_chatId.txt": {
         "global_cache": false,
         "version_id": 1000000,
         "version_string": "1.0.0",
         "hash": "dcee6bb0248babf4c107429bdb8acabb"
+    },
+    "option_explain.telegramBot_notifyAdminAccess.txt": {
+        "global_cache": false,
+        "version_id": 1000400,
+        "version_string": "1.0.4",
+        "hash": "d41d8cd98f00b204e9800998ecf8427e"
     },
     "option_group.tlTelegramBot.txt": {
         "global_cache": false,
