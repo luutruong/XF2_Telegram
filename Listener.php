@@ -15,7 +15,7 @@ class Listener
     {
         $container = $app->container();
         $container[App::KEY_CONTAINER_TELEGRAM] = function () {
-            $token = \XF::app()->options()->telegramBot_botToken;
+            $token = \XF::app()->options()->telegram_botToken;
             if (\strlen($token) === 0) {
                 return null;
             }

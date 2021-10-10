@@ -1,9 +1,18 @@
 {
+    "XF-Admin-Controller-Login_Truonglv-Telegram-XF-Admin-Controller-Login.json": {
+        "hash": "19fc896072a0c994f1c55a467b4136b7"
+    },
     "XF-Admin-Controller-Login_Truonglv-TelegramBot-XF-Admin-Controller-Login.json": {
         "hash": "cefd9344e689c81bbca013e45c31b7b4"
     },
+    "XF-Entity-PaymentProviderLog_Truonglv-Telegram-XF-Entity-PaymentProviderLog.json": {
+        "hash": "0a4cf39e4f2b4f4f8807f53eec8ed7c7"
+    },
     "XF-Entity-PaymentProviderLog_Truonglv-TelegramBot-XF-Entity-PaymentProviderLog.json": {
         "hash": "d5b310e6a118f7167ea956e6cb77c136"
+    },
+    "XF-Pub-Controller-Misc_Truonglv-Telegram-XF-Pub-Controller-Misc.json": {
+        "hash": "227840366ffa890e76771ca9163533ac"
     },
     "XF-Pub-Controller-Misc_Truonglv-TelegramBot-XF-Pub-Controller-Misc.json": {
         "hash": "341b48bb7e66da08db15025ab9964566"

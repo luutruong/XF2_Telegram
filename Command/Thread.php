@@ -14,18 +14,21 @@ class Thread extends AbstractHandler
                 $finder = $this->app->finder('XF:Thread');
                 $finder->where('post_date', '>=', \XF::$time - 86400);
                 $finder->order('view_count', 'desc');
+
                 break;
             case 'most_replied_threads':
                 /** @var \XF\Finder\Thread $finder */
                 $finder = $this->app->finder('XF:Thread');
                 $finder->where('post_date', '>=', \XF::$time - 86400);
                 $finder->order('reply_count', 'desc');
+
                 break;
             case 'recent_threads':
                 /** @var \XF\Finder\Thread $finder */
                 $finder = $this->app->finder('XF:Thread');
                 $finder->where('post_date', '>=', \XF::$time - 86400);
                 $finder->order('last_post_date', 'desc');
+
                 break;
         }
 

@@ -1,0 +1,6 @@
+{
+    "from_class": "XF\\Entity\\PaymentProviderLog",
+    "to_class": "Truonglv\\Telegram\\XF\\Entity\\PaymentProviderLog",
+    "execute_order": 10,
+    "active": true
+}

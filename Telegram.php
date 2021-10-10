@@ -96,9 +96,9 @@ class Telegram
     public function sendMessage(string $message, array $params = []): ?array
     {
         if (!isset($params['chat_id'])) {
-            $chatId = \XF::app()->options()->telegramBot_chatId;
+            $chatId = \XF::app()->options()->telegram_chatId;
             if (\strlen($chatId) === 0) {
-                return null;
+                throw new \LogicException('Must be set chatId');
             }
 
             $params['chat_id'] = $chatId;
