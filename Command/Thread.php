@@ -58,7 +58,7 @@ class Thread extends AbstractHandler
         /** @var \XF\Entity\Thread $thread */
         foreach ($threads as $thread) {
             $messages[] = sprintf(
-                '<a href="%s">%s</a> <span>%s</span>',
+                '<a href="%s">%s</a> - %s',
                 htmlspecialchars($router->buildLink('canonical:threads', $thread)),
                 htmlspecialchars($thread->title),
                 htmlspecialchars($thread->User !== null ? $thread->User->username : $thread->username)
