@@ -16,7 +16,7 @@ class App
         return $api;
     }
 
-    public static function command(string $class): AbstractHandler
+    public static function command(string $class, string $command): AbstractHandler
     {
         $telegram = static::getTelegram();
         if ($telegram === null) {
@@ -25,7 +25,7 @@ class App
 
         $class = \XF::app()->extendClass($class);
         /** @var AbstractHandler $obj */
-        $obj = new $class(\XF::app(), $telegram);
+        $obj = new $class(\XF::app(), $telegram, $command);
 
         return $obj;
     }

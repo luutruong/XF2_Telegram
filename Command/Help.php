@@ -12,7 +12,7 @@ class Help extends AbstractHandler
         $commands = $this->telegram->getCommands();
 
         foreach ($commands as $command => $handler) {
-            $cmd = App::command($handler);
+            $cmd = App::command($handler, $command);
             $responses[] = sprintf('/%s - %s', $command, $cmd->description());
         }
 

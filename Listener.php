@@ -3,6 +3,7 @@
 namespace Truonglv\Telegram;
 
 use Truonglv\Telegram\Command\Help;
+use Truonglv\Telegram\Command\Thread;
 
 class Listener
 {
@@ -24,6 +25,11 @@ class Listener
             /** @var Telegram $api */
             $api = new $class($token);
             $api->addCommand('help', Help::class);
+
+            // threads
+            $api->addCommand('most_viewed_threads', Thread::class);
+            $api->addCommand('most_replied_threads', Thread::class);
+            $api->addCommand('recent_threads', Thread::class);
 
             return $api;
         };
