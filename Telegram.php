@@ -83,7 +83,7 @@ class Telegram
             return;
         }
 
-        $handler = App::command($handler, $text);
+        $handler = App::command($handler, $command);
         $handler->handle();
     }
 

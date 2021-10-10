@@ -44,6 +44,7 @@ class Thread extends AbstractHandler
 
         $threads = $finder->fetch()->filterViewable();
         if ($threads->count() === 0) {
+            $this->telegram->sendMessage('There are no threads to display.');
             return;
         }
 
