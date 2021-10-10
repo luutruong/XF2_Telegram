@@ -26,7 +26,7 @@ class Thread extends AbstractHandler
             case 'recent_threads':
                 /** @var \XF\Finder\Thread $finder */
                 $finder = $this->app->finder('XF:Thread');
-                $finder->where('post_date', '>=', \XF::$time - 86400);
+                $finder->where('last_post_date', '>=', \XF::$time - 86400);
                 $finder->order('last_post_date', 'desc');
 
                 break;
@@ -40,6 +40,7 @@ class Thread extends AbstractHandler
         $limit = 10;
 
         $finder->where('discussion_state', 'visible');
+        $finder->with('User');
         $finder->limit($limit * 2);
 
         $threads = $finder->fetch()->filterViewable();
@@ -57,9 +58,10 @@ class Thread extends AbstractHandler
         /** @var \XF\Entity\Thread $thread */
         foreach ($threads as $thread) {
             $messages[] = sprintf(
-                '<a href="%s">%s</a>',
+                '<a href="%s">%s</a> <span>%s</span>',
                 htmlspecialchars($router->buildLink('canonical:threads', $thread)),
-                htmlspecialchars($thread->title)
+                htmlspecialchars($thread->title),
+                htmlspecialchars($thread->User !== null ? $thread->User->username : $thread->username)
             );
         }
 
