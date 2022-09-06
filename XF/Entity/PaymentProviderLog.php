@@ -13,7 +13,6 @@ class PaymentProviderLog extends XFCP_PaymentProviderLog
 
         $telegram = App::getTelegram();
         if ($this->isChanged('log_type')
-            && $this->log_type === 'payment'
             && $telegram !== null
         ) {
             /** @var PurchaseRequest|null $purchaseRequest */
@@ -22,14 +21,14 @@ class PaymentProviderLog extends XFCP_PaymentProviderLog
                 return;
             }
 
-            $message = $this->log_message;
+            $message = $this->log_type . ': ' . $this->log_message;
             $message .= "\n" . sprintf(
-                '%s (%s %f)',
+                '- %s (%s %.02f)',
                 $this->provider_id,
                 $purchaseRequest->cost_currency,
                 $purchaseRequest->cost_amount
             );
-            $message .= "\nPurchaser: " . ($purchaseRequest->User->username ?? '_');
+            $message .= "\n- Purchaser: " . ($purchaseRequest->User->username ?? 'Unknown user');
 
             $telegram->sendMessage($message);
         }
