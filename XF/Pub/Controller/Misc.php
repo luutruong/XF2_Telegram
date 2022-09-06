@@ -2,6 +2,7 @@
 
 namespace Truonglv\Telegram\XF\Pub\Controller;
 
+use Throwable;
 use XF\Mvc\ParameterBag;
 use Truonglv\Telegram\App;
 
@@ -24,7 +25,7 @@ class Misc extends XFCP_Misc
 
         try {
             $telegramApi->handleWebhookEvent($this->request()->getInputRaw());
-        } catch (\Throwable $e) {
+        } catch (Throwable $e) {
             // keep silent
         }
 

@@ -2,6 +2,7 @@
 
 namespace Truonglv\Telegram\XF\Admin\Controller;
 
+use function implode;
 use Truonglv\Telegram\App;
 
 class Login extends XFCP_Login
@@ -17,7 +18,7 @@ class Login extends XFCP_Login
             $messages[] = 'IP: ' . $this->request()->getIp();
             $messages[] = 'Browser: ' . $this->request()->getUserAgent();
 
-            $api->sendMessage(\implode("\n", $messages));
+            $api->sendMessage(implode("\n", $messages));
         }
 
         return parent::actionLogin();

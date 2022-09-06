@@ -2,6 +2,8 @@
 
 namespace Truonglv\Telegram;
 
+use XF;
+use function strlen;
 use Truonglv\Telegram\Command\Help;
 use Truonglv\Telegram\Command\Thread;
 
@@ -15,12 +17,12 @@ class Listener
     {
         $container = $app->container();
         $container[App::KEY_CONTAINER_TELEGRAM] = function () {
-            $token = \XF::app()->options()->telegram_botToken;
-            if (\strlen($token) === 0) {
+            $token = XF::app()->options()->telegram_botToken;
+            if (strlen($token) === 0) {
                 return null;
             }
 
-            $class = \XF::extendClass('Truonglv\\Telegram\\Telegram');
+            $class = XF::extendClass('Truonglv\\Telegram\\Telegram');
 
             /** @var Telegram $api */
             $api = new $class($token);

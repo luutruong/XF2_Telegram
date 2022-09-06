@@ -2,6 +2,13 @@
 
 namespace Truonglv\Telegram;
 
+use XF;
+use Throwable;
+use function strtr;
+use LogicException;
+use function utf8_substr;
+use InvalidArgumentException;
+
 class Telegram
 {
     const API_ENDPOINT = 'https://api.telegram.org';
@@ -23,7 +30,7 @@ class Telegram
     public function addCommand(string $name, string $handlerClass): self
     {
         if (!class_exists($handlerClass)) {
-            throw new \InvalidArgumentException("Handler class '$handlerClass' not exists");
+            throw new InvalidArgumentException("Handler class '$handlerClass' not exists");
         }
 
         $this->commands[strtolower($name)] = $handlerClass;
@@ -53,22 +60,22 @@ class Telegram
     {
         $json = json_decode($inputRaw, true);
         if (!is_array($json) || !isset($json['message'])) {
-            throw new \InvalidArgumentException('Invalid payload');
+            throw new InvalidArgumentException('Invalid payload');
         }
 
         $sentFrom = $json['message']['from'] ?? null;
         if ($sentFrom === null) {
-            throw new \InvalidArgumentException('Invalid payload');
+            throw new InvalidArgumentException('Invalid payload');
         }
 
         $isBot = $sentFrom['is_bot'] ?? null;
         if ($isBot !== false) {
-            throw new \InvalidArgumentException('Unknown message type');
+            throw new InvalidArgumentException('Unknown message type');
         }
 
         $text = $json['message']['text'] ?? '';
         if (strlen($text) === 0) {
-            throw new \InvalidArgumentException('Message is empty');
+            throw new InvalidArgumentException('Message is empty');
         }
 
         if (substr($text, 0, 1) !== '/') {
@@ -96,16 +103,16 @@ class Telegram
     public function sendMessage(string $message, array $params = []): ?array
     {
         if (!isset($params['chat_id'])) {
-            $chatId = \XF::app()->options()->telegram_chatId;
+            $chatId = XF::app()->options()->telegram_chatId;
             if (\strlen($chatId) === 0) {
-                throw new \LogicException('Must be set chatId');
+                throw new LogicException('Must be set chatId');
             }
 
             $params['chat_id'] = $chatId;
         }
 
         if (isset($params['parse_mode']) && $params['parse_mode'] === 'MarkdownV2') {
-            $params['text'] = \strtr($params['text'], [
+            $params['text'] = strtr($params['text'], [
                 '_' => '\\_',
                 '*' => '\\*',
                 '[' => '\\[',
@@ -126,7 +133,7 @@ class Telegram
                 '!' => '\\!'
             ]);
         }
-        $params['text'] = \utf8_substr($message, 0, 4096);
+        $params['text'] = utf8_substr($message, 0, 4096);
 
         return $this->sendRequest('POST', 'sendMessage', [
             'form_params' => $params
@@ -135,13 +142,13 @@ class Telegram
 
     protected function sendRequest(string $method, string $endPoint, array $options): ?array
     {
-        $client = \XF::app()->http()->client();
+        $client = XF::app()->http()->client();
         $response = null;
 
         try {
             $response = $client->request($method, self::API_ENDPOINT . '/bot' . $this->token . '/' . $endPoint, $options);
-        } catch (\Throwable $e) {
-            \XF::logException($e, false, '[tl] Telegram Bot: ');
+        } catch (Throwable $e) {
+            XF::logException($e, false, '[tl] Telegram Bot: ');
         }
 
         if ($response === null || $response->getStatusCode() !== 200) {

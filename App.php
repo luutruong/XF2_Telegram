@@ -2,6 +2,8 @@
 
 namespace Truonglv\Telegram;
 
+use XF;
+use InvalidArgumentException;
 use Truonglv\Telegram\Command\AbstractHandler;
 
 class App
@@ -11,7 +13,7 @@ class App
     public static function getTelegram(): ?Telegram
     {
         /** @var Telegram|null $api */
-        $api = \XF::app()->container(self::KEY_CONTAINER_TELEGRAM);
+        $api = XF::app()->container(self::KEY_CONTAINER_TELEGRAM);
 
         return $api;
     }
@@ -20,12 +22,12 @@ class App
     {
         $telegram = static::getTelegram();
         if ($telegram === null) {
-            throw new \InvalidArgumentException('Telegram was not setup');
+            throw new InvalidArgumentException('Telegram was not setup');
         }
 
-        $class = \XF::app()->extendClass($class);
+        $class = XF::app()->extendClass($class);
         /** @var AbstractHandler $obj */
-        $obj = new $class(\XF::app(), $telegram, $command);
+        $obj = new $class(XF::app(), $telegram, $command);
 
         return $obj;
     }
