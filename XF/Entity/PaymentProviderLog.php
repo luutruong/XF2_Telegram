@@ -2,6 +2,7 @@
 
 namespace Truonglv\Telegram\XF\Entity;
 
+use function floatval;
 use Truonglv\Telegram\App;
 use XF\Entity\PurchaseRequest;
 
@@ -17,16 +18,27 @@ class PaymentProviderLog extends XFCP_PaymentProviderLog
         ) {
             /** @var PurchaseRequest|null $purchaseRequest */
             $purchaseRequest = $this->PurchaseRequest;
-            if ($purchaseRequest === null) {
-                return;
+            $currency = '';
+            $costAmount = 0.0;
+
+            if ($purchaseRequest !== null) {
+                $currency = $purchaseRequest->cost_currency;
+                $costAmount = $purchaseRequest->cost_amount;
+            }
+
+            if ($currency === '' && isset($this->log_details['mc_currency'])) {
+                $currency = $this->log_details['mc_currency'];
+            }
+            if ($costAmount === 0.0 && isset($this->log_details['mc_gross'])) {
+                $costAmount = floatval($this->log_details['mc_gross']);
             }
 
             $message = $this->log_type . ': ' . $this->log_message;
             $message .= "\n" . sprintf(
                 '- %s (%s %.02f)',
                 $this->provider_id,
-                $purchaseRequest->cost_currency,
-                $purchaseRequest->cost_amount
+                $currency,
+                $costAmount
             );
             $message .= "\n- Purchaser: " . ($purchaseRequest->User->username ?? 'Unknown user');
 
