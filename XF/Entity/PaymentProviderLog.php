@@ -14,6 +14,7 @@ class PaymentProviderLog extends XFCP_PaymentProviderLog
 
         $telegram = App::getTelegram();
         if ($this->isChanged('log_type')
+            && \in_array($this->log_type, ['payment', 'info'], true)
             && $telegram !== null
         ) {
             /** @var PurchaseRequest|null $purchaseRequest */
