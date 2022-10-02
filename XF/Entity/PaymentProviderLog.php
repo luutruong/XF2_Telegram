@@ -3,6 +3,7 @@
 namespace Truonglv\Telegram\XF\Entity;
 
 use function floatval;
+use function in_array;
 use Truonglv\Telegram\App;
 use XF\Entity\PurchaseRequest;
 
@@ -14,7 +15,7 @@ class PaymentProviderLog extends XFCP_PaymentProviderLog
 
         $telegram = App::getTelegram();
         if ($this->isChanged('log_type')
-            && \in_array($this->log_type, ['payment', 'info'], true)
+            && in_array($this->log_type, ['payment', 'info'], true)
             && $telegram !== null
         ) {
             /** @var PurchaseRequest|null $purchaseRequest */
